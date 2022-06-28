@@ -1,0 +1,51 @@
+<section class="section" id="carousel-section">
+  <div class="container">
+    <div id="carousel-demo" class="carousel pb-6" style="overflow: hidden">
+      <div class="item-1">
+        <div class="columns">
+          <div class="column is-half">
+            <h2 class="title is-1">Operator Map</h2>
+            <p>
+              Transforms each item emitted by an Observable and return an
+              Observable.
+            </p>
+          </div>
+        </div>
+        <p>Click to view product details</p>
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <ul *ngFor="let item of records; let i = index">
+                  <li>
+                    <button class="button is-link" (click)="mapRecord(i)">
+                      {{ item.name }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card-content">
+              <ul>
+                <li>Name: {{ record?.name }}</li>
+                <li>Description: {{ record?.description }}</li>
+                <li>Price: {{ record?.price }}</li>
+                <li>
+                  <img
+                    *ngIf="record"
+                    [src]="record?.image"
+                    height="100px"
+                    width="100px"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Carousel -->
+  </div>
+</section>
